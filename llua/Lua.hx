@@ -68,8 +68,8 @@ extern class Lua {
 	@:native('lua_newthread')
 	static function newthread(l:State) : State;
 
-	// @:native('lua_atpanic')
-	// static function atpanic(l:State, panicf:lua_CFunction) : lua_CFunction;
+	@:native('lua_atpanic')
+	static function atpanic(l:State, panicf:cpp.Callable<StatePointer->Int>) : cpp.Callable<StatePointer->Int>;
 
 
 	/* basic stack manipulation */
